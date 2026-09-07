@@ -6,10 +6,12 @@ void main () {
     
     double imc = calcularIMC(peso, altura);
     String classificacao = "";
+    String generoTexto = "";
 
     switch (genero) {
         case 'M':
         case 'm':
+            generoTexto = "Masculino";
             if (imc >= 40) {
                 classificacao = "Obesidade Mórbida";
             } else if (imc >=30) {
@@ -26,6 +28,7 @@ void main () {
         case 'N':
         case 'n':
         default:
+            generoTexto = "Feminino";
             if (imc >=39) {
                 classificacao = "Obesidade Mórbita";
             } else if (imc >=29) {
@@ -41,7 +44,7 @@ void main () {
     
     IO.println("");
     IO.println("Nome: " + nome);
-    IO.println("Gênero: " + genero);
+    IO.println("Gênero: " + generoTexto);
     IO.println("IMC: " + imc);
     IO.println("Classificação: " + classificacao);
 }
